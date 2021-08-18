@@ -1,0 +1,34 @@
+%noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+%flex{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%li-style{
+    @extend %flex;
+    @extend %noselect;
+    min-width: 100px;
+    height: 50px;   
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.1s linear;
+    &:hover{
+        background-color: darkorange;
+    }
+    &:active{
+        animation: buttonClick 0.1s linear;
+    }
+}

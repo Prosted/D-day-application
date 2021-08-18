@@ -1,10 +1,358 @@
-@import "reset.css";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@-webkit-keyframes buttonClick {
+  from {
+    -webkit-transform: none;
+            transform: none;
+  }
+  to {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+}
+
+@keyframes buttonClick {
+  from {
+    -webkit-transform: none;
+            transform: none;
+  }
+  to {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+}
+
+@-webkit-keyframes slideIn {
+  from {
+    -webkit-transform: none;
+            transform: none;
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    -webkit-transform: none;
+            transform: none;
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes visible {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+header .nav li, main .box .box-inner form button, main .process-container footer .deleteBtn, main aside ul li {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+header .nav li, main .box .box-inner form button, main .process-container footer .deleteBtn, main aside ul li, header .nav, main, main .box .box-inner, main .box .box-inner form, main .process-container .process-title, main .process-container header, main .process-container header .process__texts, main .process-container .counterContainer, main .process-container footer, main aside ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .nav li, main .box .box-inner form button, main .process-container footer .deleteBtn, main aside ul li {
+  min-width: 100px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+header .nav li:hover, main .box .box-inner form button:hover, main .process-container footer .deleteBtn:hover, main aside ul li:hover {
+  background-color: darkorange;
+}
+
+header .nav li:active, main .box .box-inner form button:active, main .process-container footer .deleteBtn:active, main aside ul li:active {
+  -webkit-animation: buttonClick 0.1s linear;
+          animation: buttonClick 0.1s linear;
+}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: tan;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+header .nav {
+  height: 100%;
+  gap: 10px;
+}
+
+header .nav li {
+  opacity: 0;
+  -webkit-animation: visible 0.5s linear forwards;
+          animation: visible 0.5s linear forwards;
+  background-color: steelblue;
+}
+
+main {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+main .box {
+  width: 40%;
+  height: 300px;
+  background-color: beige;
+  padding: 10px 10px;
+  border-radius: 15px;
+}
+
+main .box .box-inner {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 10px;
+  height: 100%;
+}
+
+main .box .box-inner .info-text {
+  color: black;
+  font-weight: 600;
+}
+
+main .box .box-inner form {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  row-gap: 30px;
+  margin-top: 20px;
+}
+
+main .box .box-inner form input {
+  width: 50%;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  border-bottom: 1px solid black;
+  text-align: center;
+  padding: 0 20px;
+  padding-bottom: 10px;
+  background-color: inherit;
+  -webkit-transition: border-color 0.3s linear;
+  transition: border-color 0.3s linear;
+}
+
+main .box .box-inner form input::-webkit-input-placeholder {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+main .box .box-inner form input:-ms-input-placeholder {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+main .box .box-inner form input::-ms-input-placeholder {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+main .box .box-inner form input::placeholder {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+main .box .box-inner form input:focus {
+  border-color: yellow;
+}
+
+main .box .box-inner form button {
+  background-color: greenyellow;
+  border: none;
+}
+
+main .process-container .process-title {
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+}
+
+main .process-container .process-title span {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+main .process-container header {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .process-container header .process__texts {
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+}
+
+main .process-container header .process-bar {
+  margin-top: 10px;
+}
+
+main .process-container .counterContainer {
+  width: 100%;
+  padding: 10px;
+}
+
+main .process-container .counterContainer .counter {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+main .process-container footer {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 10px;
+}
+
+main .process-container footer .deleteBtn {
+  background-color: red;
+  font-size: 13px;
+  padding: 0 20px;
+}
+
+main aside ul {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+main aside ul li {
+  opacity: 0;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  -webkit-animation: slideIn 0.5s linear forwards;
+          animation: slideIn 0.5s linear forwards;
+  background-color: rosybrown;
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,25 @@
+@keyframes buttonClick {
+    from{
+        transform: none;
+    }to{
+        transform: scale(0.95);
+    }
+}
+
+@keyframes slideIn {
+    from{
+        transform: none;
+        opacity: 0;
+    }to{
+        transform: translateY(20px);
+        opacity: 1;
+    }   
+}
+
+@keyframes visible {
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}

@@ -5,45 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
     <title>D-day</title>
 </head>
 <body>
+    <header>
+        <ul class="nav">
+            <li class="nav__search">Search</li>
+            <li class="nav__create">Create</li>
+        </ul>
+    </header>
     <main>
-        <div class="search-container">
-            <span>Search your D-day</span>
-            <form>
-                <input type="text", placeholder="enter your D-day name", required>
-                <button>Search</button>
-            </form>
-            <hr>
-            <button class="create">Create a new D-day</button>
-            <ul class="lists"></ul>
-        </div>
-        <div class="set-container hidden">
-            <span>You can choose your Goal (Day 1 ~ Day 365)</span>
-            <form>
-                <input class="set-container__name" type="text", placeholder="Set your D-day name", required>
-                <input class="set-container__day" type="number", placeholder="Set your D-day", required, min="1", max="365">
-                <button>Save</button>
-            </form>
-            <hr>
-            <button class="goSearch">Search</button>
-        </div>
-        <div class="process-container hidden">
-            <div>
-                <span class="process-name"></span>
-                <span class="process-date">0</span>
-                <span>/</span>
-                <span class="goal-date">0</span>
-                <span>일 차 진행중</span>
+        <div class="search-container box hidden">
+            <div class="box-inner">
+                <span class="info-text">Search your D-day</span>
+                <form class="searchForm">
+                    <input class="searchForm__input", type="text", placeholder="D-day Name", maxlength="20", required>
+                    <button class="actionBtn">Search</button>
+                </form>
             </div>
-            <input class="process-bar"" type="range", min="1">
-            <span class="dueDate-count">00:00:00</span>
-            <span class="dueDate">21/01/01/월</span>
-            <span class="delete">❌ Delete D-day</span>
-            <button class="goSearch">Search</button>
         </div>
+        <div class="set-container box hidden">
+            <div class="box-inner">
+                <span class="info-text">You can choose your Goal (Day 1 ~ Day 365)</span>
+                <form class="setForm">
+                    <input class="setForm__name", type="text", placeholder="D-day Name", maxlength="20", required>
+                    <input class="setForm__day", type="number", placeholder="D-day Number", required, min="1", max="365">
+                    <button class="actionBtn">Save</button>
+                </form>
+            </div>
+        </div>
+        <div class="process-container box hidden">
+            <div class="box-inner">
+                <div class="process-title">
+                    <span>D-day's name : </span>
+                    <span class="process__name"></span>
+                </div>
+                <header>
+                    <div class="process__texts">
+                        <span class="process__texts__current">0</span>
+                        <span class="process__texts__divider">/</span>
+                        <span class="process__texts__goal">0</span>
+                        <span class="process__texts__text">일 차 진행중</span>
+                    </div>
+                    <input class="process-bar", type="range", min="1", max="100" step="1">
+                </header>
+                <div class="counterContainer">
+                    <span class="counter">00:00:00</span>
+                </div>
+                <footer>
+                    <span class="process__dueDate">21/01/01/월</span>
+                    <span class="deleteBtn">❌ Delete D-day</span>
+                </footer>
+            </div>
+        </div>
+        <aside>
+            <ul class="lists"></ul>
+        </aside>
     </main>
     <script src="main.js"></script>
 </body>
